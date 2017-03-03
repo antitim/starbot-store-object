@@ -1,6 +1,29 @@
 # starbot-store-object [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
-## Лицензия
+## About
+
+Store module for [StarBot](https://github.com/antitim/starbot)
+
+## Installation
+
+```sh
+$ npm install --save starbot-store-object
+```
+
+## Options
+
+```js
+const bot = new Starbot({
+  ...
+  store: {
+    type: 'starbot-store-object'
+  },
+  ...
+});
+```
+
+
+## License
 
 MIT © [antitim](http://vk.com/antitim)
 

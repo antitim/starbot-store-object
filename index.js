@@ -1,29 +1,26 @@
 'use strict';
 
 /**
- * Хранилище использующее объект js для хранения состояния
+ * The module uses the js object to store state
  */
 class StarbotStoreObject {
-  constructor (settings) {
+  constructor (settings, botName) {
     settings = settings || {};
 
-    this.run = function (botName) {
-      let state = {};
+    this.state = {};
 
-      return {
-        async get (userId) {
-          return new Promise(function (resolve, reject) {
-            resolve(state[userId]);
-          });
-        },
-        async set (userId, newState) {
-          state[userId] = newState;
+    this.get = async (userId) => {
+      return new Promise((resolve, reject) => {
+        resolve(this.state[userId]);
+      });
+    };
 
-          return new Promise(function (resolve, reject) {
-            resolve(state[userId]);
-          });
-        }
-      };
+    this.set = async (userId, newState) => {
+      this.state[userId] = newState;
+
+      return new Promise((resolve, reject) => {
+        resolve(this.state[userId]);
+      });
     };
   }
 }
