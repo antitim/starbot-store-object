@@ -13,13 +13,8 @@ $ npm install --save starbot-store-object
 ## Options
 
 ```js
-const bot = new Starbot({
-  ...
-  store: {
-    type: 'starbot-store-object'
-  },
-  ...
-});
+const StoreRedis = require('starbot-store-object');
+const store = new StoreObject();
 ```
 
 
